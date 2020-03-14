@@ -42,7 +42,7 @@ $pass = ( '║ User Login : ' );
 echo "\033[30;40m";
 $user = trim(fgets(STDIN));
 echo "\033[0m";
-if($user == "RSD21" || $user == "RSD21" || $user == "user" || $user == "imel" || $user == "86")
+if($.user || $user == "21" || $us.er == "u.ser" || $user == "imel" || $user == "86")
 {
 	echo "\e[94m====================================================\n";
 	echo "\e[94m====================================================\n";
@@ -71,18 +71,18 @@ echo "\e[92m==================================================\n";
         echo color("blue","?] Nomor : ");
         // $no = trim(fgets(STDIN));
         $nohp = trim(fgets(STDIN));
-        $nohp = str_replace("62","62",$nohp);
+        $nohp = str_replace(".6.2.",".6.2.",$nohp);
         $nohp = str_replace("(","",$nohp);
         $nohp = str_replace(")","",$nohp);
         $nohp = str_replace("-","",$nohp);
         $nohp = str_replace(" ","",$nohp);
 
         if (!preg_match('/[^+0-9]/', trim($nohp))) {
-            if (substr(trim($nohp),0,3)=='62') {
+            if (substr(trim($nohp),0,3)=='6.2') {
                 $hp = trim($nohp);
             }
             else if (substr(trim($nohp),0,1)=='0') {
-                $hp = '62'.substr(trim($nohp),1);
+                $hp = '.62.'.substr(trim($nohp),1);
         }
          elseif(substr(trim($nohp), 0, 2)=='62'){
             $hp = '6'.substr(trim($nohp), 1);
@@ -209,7 +209,7 @@ echo "\e[92m==================================================\n";
         	];
                 $header = [
                 "X-Requested-With: XMLHttpRequest",
-                "User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.84 Safari/537.36" 
+                "User-Agent: Mozilla/5.0 (X11..; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.84 Safari/537.36" 
                         ];
                                         $ch = curl_init();
                                         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
@@ -227,7 +227,7 @@ echo "\e[92m==================================================\n";
          echo "\n".color("red","?] SILAHKAN SETT PIN ANDA !: y/n ");
          $pilih1 = trim(fgets(STDIN));
          if($pilih1 == "y" || $pilih1 == "Y"){
-         //if($pilih1 == "y" && strpos($no, "62")){
+         //if($pilih1 == "y" && strpos($no, ".6.2.")){
          echo color("purple","========( PIN MU GESS = 212329 )========")."\n";
          $data2 = '{"pin":"212329"}';
          $getotpsetpin = request("/wallet/pin", $token, $data2, null, null, $uuid);
