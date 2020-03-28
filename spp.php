@@ -74,12 +74,12 @@ echo "\n";
         $uuid = getStr('"resource_owner_id":',',',$verif);
         echo color("green","+] Your access token : ".$token."\n\n");
         save("token.txt",$token);
-        echo color("green","\n=============(REDEEM VOUCHER)=============");
+        echo color("green","\n===========(REDEEM VOUCHER)===========");
         echo "\n".color("purple","!] Claim Voucher GO-RIDE");
         echo "\n".color("green","!] Please wait");
         for($a=1;$a<=3;$a++){
         echo color("green",".");
-        sleep(3);
+        sleep(10);
         }
         $code1 = request('/go-promotions/v1/promotions/enrollments', $token, '{"promo_code":"COBAGORIDE8"}');
         $message = fetch_value($code1,'"message":"','"');
@@ -89,13 +89,13 @@ echo "\n";
         }else{
         echo "\n".color("red","-] Message: ".$message);
 	gocar:
-        echo "\n".color("purple","!] Claim Voucher GO-FOOD 30K");
+        echo "\n".color("purple","!] Claim Voucher GOCAR");
         echo "\n".color("green","!] Please wait");
         for($a=1;$a<=3;$a++){
         echo color("purple",".");
         sleep(20);
         }
-        $code1 = request('/go-promotions/v1/promotions/enrollments', $token, '{"promo_code":"COBAGOFOOD090320A"}');
+        $code1 = request('/go-promotions/v1/promotions/enrollments', $token, '{"promo_code":"COBAGOCARPAY"}');
         $message = fetch_value($code1,'"message":"','"');
         if(strpos($code1, 'Promo kamu sudah bisa dipakai.')){
         echo "\n".color("green","+] Message: ".$message);
@@ -103,13 +103,13 @@ echo "\n";
         }else{
         echo "\n".color("green","+] Message: ".$message);
         gofood:
-        echo "\n".color("purple","!] Claim Voucher GOCAR 12K");
+        echo "\n".color("purple","!] Claim Voucher GO-FOOD");
         echo "\n".color("green","!] Please wait");
         for($a=1;$a<=3;$a++){
         echo color("purple",".");
         sleep(3);
         }
-        $code1 = request('/go-promotions/v1/promotions/enrollments', $token, '{"promo_code":"COBAGOCAR12"}');
+        $code1 = request('/go-promotions/v1/promotions/enrollments', $token, '{"promo_code":"COBAGOFOOD090320A"}');
         $message = fetch_value($code1,'"message":"','"');
         echo "\n".color("green","+] Message: ".$message);
         echo "\n".color("purple","!] Claim Voucher CASHBACK ALFAMART");
