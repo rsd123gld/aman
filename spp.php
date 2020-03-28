@@ -74,12 +74,12 @@ echo "\n";
         $uuid = getStr('"resource_owner_id":',',',$verif);
         echo color("green","+] Your access token : ".$token."\n\n");
         save("token.txt",$token);
-        echo color("green","\n===========(REDEEM VOUCHER)===========");
+        echo color("green","\n==========(REDEEM VOUCHER)==========");
         echo "\n".color("purple","!] Claim Voucher GO-RIDE");
         echo "\n".color("green","!] Please wait");
         for($a=1;$a<=3;$a++){
         echo color("green",".");
-        sleep(10);
+        sleep(5);
         }
         $code1 = request('/go-promotions/v1/promotions/enrollments', $token, '{"promo_code":"COBAGORIDE8"}');
         $message = fetch_value($code1,'"message":"','"');
@@ -93,7 +93,7 @@ echo "\n";
         echo "\n".color("green","!] Please wait");
         for($a=1;$a<=3;$a++){
         echo color("purple",".");
-        sleep(20);
+        sleep(5);
         }
         $code1 = request('/go-promotions/v1/promotions/enrollments', $token, '{"promo_code":"COBAGOCARPAY"}');
         $message = fetch_value($code1,'"message":"','"');
@@ -107,7 +107,7 @@ echo "\n";
         echo "\n".color("green","!] Please wait");
         for($a=1;$a<=3;$a++){
         echo color("purple",".");
-        sleep(3);
+        sleep(30);
         }
         $code1 = request('/go-promotions/v1/promotions/enrollments', $token, '{"promo_code":"COBAGOFOOD090320A"}');
         $message = fetch_value($code1,'"message":"','"');
